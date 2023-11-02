@@ -36,6 +36,26 @@ echo $result->getBody();
 
 $result = $rawDataClient->get(123 /* idRawExport from the previous request */);
 echo $result->getBody();
+
+$reportClient = new ReportClient('appUserId', 'apiSecretKey', $psr18Client);
+$result = $reportClient->create([
+    'settings' => [
+        'filter' => [
+            'date' => [
+                'from' => '2020-07-10',
+                'to' => '2020-07-17',
+            ],
+        ],
+        'selectors' => 'idApp,countInstall',
+        'idCurrency' => 643,
+        'tz' => 'Europe/Moscow',
+        'precision' => 2,
+        'retIndent' => 3600,
+    ]
+]);
+
+$result = $reportClient->get(123 /* idReportFile from the previous request */);
+echo $result->getBody();
 ```
 
 For full documentation, visit the **[MyTracker Export API docs](https://docs.tracker.my.com/api/export-api/about)**.

@@ -1,7 +1,7 @@
 {
   "name": "tracker-my-com/mytracker-client-php",
   "description": "A PHP library to interact with API of tracker.my.com",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "homepage": "https://tracker.my.com/",
   "license": "MIT",
   "support": {
